@@ -1,7 +1,23 @@
-const List = () => (
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
+const List = ({ filter }) => (
   <div>
-    Hello world in our application!
+    <p>
+      Hello world in our application!
+    </p>
+    <p>
+      {filter}
+    </p>
   </div>
 );
 
-export default List;
+List.propTypes = {
+  filter: PropTypes.string.isRequired,
+};
+
+const mapStateToProps = state => ({
+  filter: state,
+});
+
+export default connect(mapStateToProps)(List);
