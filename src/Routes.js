@@ -1,11 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import App from './App';
+import List from './containers/List';
+import Detail from './containers/Detail';
 
 const Routes = () => (
   <BrowserRouter>
     <Switch>
-      <Route path="/" component={App} />
+      <Route exact path="/" component={List} />
+      <Route path="/country" component={Detail} />
     </Switch>
   </BrowserRouter>
 );
