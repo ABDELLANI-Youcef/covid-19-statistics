@@ -14,9 +14,8 @@ export const gatherCasesInformations = async store => {
     const response = await fetch('https://covid-api.mmediagroup.fr/v1/cases', options);
     const data = await response.json();
     store.dispatch(createCase(data));
-    console.log(data);
   } catch (error) {
-    console.error(error);
+    store.dispatch(createCase(error));
   }
 };
 
