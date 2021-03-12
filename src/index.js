@@ -4,12 +4,15 @@ import './index.css';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import filterReducer from './reducers/filter';
+import { gatherCasesInformations } from './reducers/cases';
 import Routes from './Routes';
 
 /* eslint-disable no-underscore-dangle */
 const store = createStore(filterReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 /* eslint-enable */
+
+gatherCasesInformations();
 
 ReactDOM.render(
   <Provider store={store}>
