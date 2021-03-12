@@ -1,18 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import filterReducer from './reducers/filter';
-import { gatherCasesInformations } from './reducers/cases';
+import { gatherCasesInformations, casesReducer } from './reducers/cases';
 import Routes from './Routes';
 
+const rootReducer = combineReducers({
+  cases: casesReducer,
+  filter: filterReducer,
+});
+
 /* eslint-disable no-underscore-dangle */
-const store = createStore(filterReducer,
+const store = createStore(rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 /* eslint-enable */
 
-gatherCasesInformations();
+gatherCasesInformations(store);
 
 ReactDOM.render(
   <Provider store={store}>
