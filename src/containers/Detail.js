@@ -1,12 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Detail = ({ location, data }) => {
   const { country } = location.state;
   const countryData = data[country].All;
   return (
     <>
+      <Link to="/">Go back home</Link>
       <p>
         Hello world in our application! this is a Detail page concerning
         {' '}
