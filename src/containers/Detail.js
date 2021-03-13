@@ -5,7 +5,13 @@ import { Link } from 'react-router-dom';
 
 const Detail = ({ location, data }) => {
   const { country } = location.state;
+  if (Object.keys(data).length === 0) {
+    return (
+      <p>Please wait</p>
+    );
+  }
   const countryData = data[country].All;
+
   return (
     <>
       <Link to="/">Go back home</Link>
