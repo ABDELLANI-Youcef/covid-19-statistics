@@ -4,12 +4,16 @@ import './index.css';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import filterReducer from './reducers/filter';
-import { gatherCasesInformations, casesReducer } from './reducers/cases';
+import {
+  gatherCasesInformations, casesReducer, deathsHistoryReducer, confirmedHistoryReducer,
+} from './reducers/cases';
 import Routes from './Routes';
 
 const rootReducer = combineReducers({
   cases: casesReducer,
   filter: filterReducer,
+  deathsHistory: deathsHistoryReducer,
+  confirmedHistory: confirmedHistoryReducer,
 });
 
 /* eslint-disable no-underscore-dangle */

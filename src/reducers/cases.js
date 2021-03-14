@@ -1,4 +1,6 @@
-import { CREATE_CASE, createCase } from '../actions/index';
+import {
+  CREATE_CASE, createCase, CREATE_HISTORY_CONFIRMED, CREATE_HISTORY_DEATHS,
+} from '../actions/index';
 
 const defaultCases = {};
 
@@ -22,6 +24,26 @@ export const gatherCasesInformations = async store => {
 export const casesReducer = (state = defaultCases, action) => {
   switch (action.type) {
     case CREATE_CASE:
+      return action.payload;
+
+    default:
+      return state;
+  }
+};
+
+export const deathsHistoryReducer = (state = defaultCases, action) => {
+  switch (action.type) {
+    case CREATE_HISTORY_DEATHS:
+      return action.payload;
+
+    default:
+      return state;
+  }
+};
+
+export const confirmedHistoryReducer = (state = defaultCases, action) => {
+  switch (action.type) {
+    case CREATE_HISTORY_CONFIRMED:
       return action.payload;
 
     default:
