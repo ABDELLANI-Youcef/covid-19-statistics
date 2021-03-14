@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import CountryItem from '../components/CountryItem';
 import FilterForm from '../components/FilterForm';
+import GlobalInformations from '../components/GlobalInformations';
 import { createFilter } from '../actions/index';
 
 const List = ({ filter, cases, createFilter }) => {
@@ -24,14 +25,13 @@ const List = ({ filter, cases, createFilter }) => {
   if (countries.length > 0) {
     countries = countries.map(place => <CountryItem key={place} country={place} />);
   } else {
-    countries = '';
+    countries = null;
   }
+  const world = countries !== null ? <GlobalInformations world={cases.Global.All} /> : null;
   return (
     <>
       <FilterForm filter={filter} clickHandle={clickHandle} />
-      <p>
-        Hello world in our application!
-      </p>
+      {world}
       <p>
         {filter.continent}
       </p>
