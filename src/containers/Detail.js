@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { createHistoryDeaths, createHistoryConfirmed } from '../actions/index';
 import GeneralDetail from '../components/GeneralDetail';
+import DeathsHistory from '../components/DeathsHistory';
 
 const requestHistory = async (nameCountry, createHistoryConfirmed,
   createHistoryDeaths) => {
@@ -45,8 +46,7 @@ const Detail = ({
   } else {
     deathsHistory = (
       <div>
-        {deaths.All.country}
-        ;
+        <DeathsHistory country={deaths.All} />
       </div>
     );
     confirmedHistory = (
