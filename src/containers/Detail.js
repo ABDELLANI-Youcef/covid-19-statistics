@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { createHistoryDeaths, createHistoryConfirmed } from '../actions/index';
 import GeneralDetail from '../components/GeneralDetail';
 import DeathsHistory from '../components/DeathsHistory';
+import ConfirmedHistory from '../components/ConfirmedHistory';
 
 const requestHistory = async (nameCountry, createHistoryConfirmed,
   createHistoryDeaths) => {
@@ -51,7 +52,7 @@ const Detail = ({
     );
     confirmedHistory = (
       <div>
-        {confirmed.All.country}
+        <ConfirmedHistory country={confirmed.All} />
       </div>
     );
   }
