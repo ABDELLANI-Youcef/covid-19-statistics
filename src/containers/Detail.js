@@ -2,8 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { createHistoryDeaths, createHistoryConfirmed } from '../actions/index';
 
-const requestHistory = async nameCountry => {
+const requestHistory = async (nameCountry, createHistoryConfirmed,
+  createHistoryDeaths) => {
   try {
     const options = {
       method: 'GET',
@@ -14,17 +16,21 @@ const requestHistory = async nameCountry => {
     };
     const deathsResponse = await fetch(`https://covid-api.mmediagroup.fr/v1/history?country=${nameCountry}&status=deaths`, options);
     const deaths = await deathsResponse.json();
-    console.log(deaths);
     const confirmedResponse = await fetch(`https://covid-api.mmediagroup.fr/v1/history?country=${nameCountry}&status=confirmed`, options);
     const confirmed = await confirmedResponse.json();
-    console.log(confirmed);
+    createHistoryConfirmed(confirmed);
+    createHistoryDeaths(deaths);
   } catch (error) {
-    console.log(error);
+    createHistoryConfirmed(error);
+    createHistoryDeaths(error);
   }
 };
-const Detail = ({ location, data }) => {
+const Detail = ({
+  location, data, createHistoryConfirmed, createHistoryDeaths,
+}) => {
   const { country } = location.state;
-  requestHistory(country);
+  requestHistory(country, createHistoryConfirmed, createHistoryDeaths);
+
   if (Object.keys(data).length === 0) {
     return (
       <p>Please wait</p>
@@ -76,10 +82,17 @@ const Detail = ({ location, data }) => {
 Detail.propTypes = {
   location: PropTypes.objectOf(PropTypes.any).isRequired,
   data: PropTypes.objectOf(PropTypes.any).isRequired,
+  createHistoryConfirmed: PropTypes.func.isRequired,
+  createHistoryDeaths: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
   data: state.cases,
 });
 
-export default connect(mapStateToProps)(Detail);
+const mapDispatchToProps = {
+  createHistoryConfirmed,
+  createHistoryDeaths,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Detail);
