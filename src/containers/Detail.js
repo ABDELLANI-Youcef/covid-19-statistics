@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { createHistoryDeaths, createHistoryConfirmed } from '../actions/index';
+import GeneralDetail from '../components/GeneralDetail';
 
 const requestHistory = async (nameCountry, createHistoryConfirmed,
   createHistoryDeaths) => {
@@ -26,10 +27,9 @@ const requestHistory = async (nameCountry, createHistoryConfirmed,
   }
 };
 const Detail = ({
-  location, data, createHistoryConfirmed, createHistoryDeaths,
+  location, data, createHistoryConfirmed, createHistoryDeaths, deaths, confirmed,
 }) => {
   const { country } = location.state;
-  requestHistory(country, createHistoryConfirmed, createHistoryDeaths);
 
   if (Object.keys(data).length === 0) {
     return (
@@ -37,44 +37,31 @@ const Detail = ({
     );
   }
   const countryData = data[country].All;
+  let deathsHistory = null;
+  let confirmedHistory = null;
+  if (Object.keys(deaths).length === 0 || deaths.All.country !== country) {
+    requestHistory(country, createHistoryConfirmed, createHistoryDeaths);
+    deathsHistory = null;
+  } else {
+    deathsHistory = (
+      <div>
+        {deaths.All.country}
+        ;
+      </div>
+    );
+    confirmedHistory = (
+      <div>
+        {confirmed.All.country}
+      </div>
+    );
+  }
 
   return (
     <>
       <Link to="/">Go back home</Link>
-      <p>
-        Hello world in our application! this is a Detail page concerning
-        {' '}
-        {country}
-      </p>
-      <ul>
-        <li>
-          The capital:
-          {' '}
-          {countryData.capital_city}
-        </li>
-        <li>
-          Population:
-          {' '}
-          {countryData.population}
-        </li>
-        <li>
-          confirmed:
-          {' '}
-          {countryData.confirmed}
-          {' '}
-          confirmed case
-        </li>
-        <li>
-          {countryData.deaths}
-          {' '}
-          deaths
-        </li>
-        <li>
-          {countryData.recovered}
-          {' '}
-          recovered persons
-        </li>
-      </ul>
+      <GeneralDetail country={countryData} />
+      {deathsHistory}
+      {confirmedHistory}
     </>
   );
 };
@@ -84,10 +71,14 @@ Detail.propTypes = {
   data: PropTypes.objectOf(PropTypes.any).isRequired,
   createHistoryConfirmed: PropTypes.func.isRequired,
   createHistoryDeaths: PropTypes.func.isRequired,
+  deaths: PropTypes.objectOf(PropTypes.any).isRequired,
+  confirmed: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 const mapStateToProps = state => ({
   data: state.cases,
+  deaths: state.deathsHistory,
+  confirmed: state.confirmedHistory,
 });
 
 const mapDispatchToProps = {
