@@ -5,7 +5,7 @@ import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import filterReducer from './reducers/filter';
 import {
-  gatherCasesInformations, casesReducer, deathsHistoryReducer, confirmedHistoryReducer,
+  casesReducer, deathsHistoryReducer, confirmedHistoryReducer,
 } from './reducers/cases';
 import Routes from './Routes';
 
@@ -21,7 +21,7 @@ const store = createStore(rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 /* eslint-enable */
 
-gatherCasesInformations(store);
+// gatherCasesInformations(store);
 
 ReactDOM.render(
   <Provider store={store}>

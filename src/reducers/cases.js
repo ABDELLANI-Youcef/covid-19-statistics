@@ -1,10 +1,10 @@
 import {
-  CREATE_CASE, createCase, CREATE_HISTORY_CONFIRMED, CREATE_HISTORY_DEATHS,
+  CREATE_CASE, CREATE_HISTORY_CONFIRMED, CREATE_HISTORY_DEATHS,
 } from '../actions/index';
 
 const defaultCases = {};
 
-export const gatherCasesInformations = async store => {
+export const gatherCasesInformations = async actionCreator => {
   try {
     const options = {
       method: 'GET',
@@ -15,9 +15,9 @@ export const gatherCasesInformations = async store => {
     };
     const response = await fetch('https://covid-api.mmediagroup.fr/v1/cases', options);
     const data = await response.json();
-    store.dispatch(createCase(data));
+    actionCreator(data);
   } catch (error) {
-    store.dispatch(createCase(error));
+    actionCreator(error);
   }
 };
 

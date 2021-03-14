@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { createHistoryDeaths, createHistoryConfirmed } from '../actions/index';
+import { createHistoryDeaths, createHistoryConfirmed, createCase } from '../actions/index';
 import GeneralDetail from '../components/GeneralDetail';
 import DeathsHistory from '../components/DeathsHistory';
 import ConfirmedHistory from '../components/ConfirmedHistory';
+import { gatherCasesInformations } from '../reducers/cases';
 
 const requestHistory = async (nameCountry, createHistoryConfirmed,
   createHistoryDeaths) => {
@@ -29,9 +30,18 @@ const requestHistory = async (nameCountry, createHistoryConfirmed,
   }
 };
 const Detail = ({
-  location, data, createHistoryConfirmed, createHistoryDeaths, deaths, confirmed,
+  location, data, createHistoryConfirmed, createHistoryDeaths, deaths, confirmed, createCase,
 }) => {
   const { country } = location.state;
+
+  useEffect(() => {
+    if (Object.keys(deaths).length === 0 || deaths.All.country !== country) {
+      requestHistory(country, createHistoryConfirmed, createHistoryDeaths);
+      if (Object.keys(data).length === 0) {
+        gatherCasesInformations(createCase);
+      }
+    }
+  }, []);
 
   if (Object.keys(data).length === 0) {
     return (
@@ -42,7 +52,6 @@ const Detail = ({
   let deathsHistory = null;
   let confirmedHistory = null;
   if (Object.keys(deaths).length === 0 || deaths.All.country !== country) {
-    requestHistory(country, createHistoryConfirmed, createHistoryDeaths);
     deathsHistory = null;
   } else {
     deathsHistory = (
@@ -74,6 +83,7 @@ Detail.propTypes = {
   createHistoryDeaths: PropTypes.func.isRequired,
   deaths: PropTypes.objectOf(PropTypes.any).isRequired,
   confirmed: PropTypes.objectOf(PropTypes.any).isRequired,
+  createCase: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -85,6 +95,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
   createHistoryConfirmed,
   createHistoryDeaths,
+  createCase,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Detail);
