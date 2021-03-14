@@ -11,10 +11,15 @@ const List = ({ filter, cases, createFilter }) => {
     createFilter(newFilter);
   };
 
-  if (filter !== 'All') {
-    countries = Object.entries(cases).filter(row => row[1].All.continent === filter)
-      .map(e => e[0]);
-  }
+  countries = Object.entries(cases).filter(row => {
+    const c = row[1].All;
+    return (c.continent === filter.continent || filter.continent === 'All')
+            && (filter.maxCases < 0 || c.confirmed <= filter.maxCases)
+            && (filter.minCases === 0 || c.confirmed >= filter.minCases)
+            && (filter.maxDeaths < 0 || c.deaths <= filter.maxDeaths)
+            && (filter.minDeaths === 0 || c.deaths >= filter.minDeaths);
+  })
+    .map(e => e[0]);
 
   if (countries.length > 0) {
     countries = countries.map(place => <CountryItem key={place} country={place} />);
@@ -28,7 +33,7 @@ const List = ({ filter, cases, createFilter }) => {
         Hello world in our application!
       </p>
       <p>
-        {filter}
+        {filter.continent}
       </p>
       <Link to={{ pathname: '/country', state: { country: 'palestine' } }}>More details</Link>
       {countries}
@@ -37,7 +42,7 @@ const List = ({ filter, cases, createFilter }) => {
 };
 
 List.propTypes = {
-  filter: PropTypes.string.isRequired,
+  filter: PropTypes.objectOf(PropTypes.any).isRequired,
   cases: PropTypes.objectOf(PropTypes.any).isRequired,
   createFilter: PropTypes.func.isRequired,
 };
