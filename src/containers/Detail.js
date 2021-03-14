@@ -3,8 +3,28 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+const requestHistory = async nameCountry => {
+  try {
+    const options = {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    };
+    const deathsResponse = await fetch(`https://covid-api.mmediagroup.fr/v1/history?country=${nameCountry}&status=deaths`, options);
+    const deaths = await deathsResponse.json();
+    console.log(deaths);
+    const confirmedResponse = await fetch(`https://covid-api.mmediagroup.fr/v1/history?country=${nameCountry}&status=confirmed`, options);
+    const confirmed = await confirmedResponse.json();
+    console.log(confirmed);
+  } catch (error) {
+    console.log(error);
+  }
+};
 const Detail = ({ location, data }) => {
   const { country } = location.state;
+  requestHistory(country);
   if (Object.keys(data).length === 0) {
     return (
       <p>Please wait</p>
