@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { createHistoryDeaths, createHistoryConfirmed, createCase } from '../actions/index';
 import GeneralDetail from '../components/GeneralDetail';
 import DeathsHistory from '../components/DeathsHistory';
@@ -68,7 +67,6 @@ const Detail = ({
 
   return (
     <>
-      <Link to="/">Go back home</Link>
       <GeneralDetail country={countryData} />
       {deathsHistory}
       {confirmedHistory}
