@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import styles from '../styles/FilterForm.module.css';
 
 const continents = ['All', 'Africa', 'Asia', 'North America', 'South America', 'Oceania', 'Europe'];
 const FilterForm = ({ clickHandle, filter }) => {
@@ -33,7 +34,7 @@ const FilterForm = ({ clickHandle, filter }) => {
     });
   };
   return (
-    <form>
+    <form className={styles.filterForm}>
       <label htmlFor="continent">
         Continent:
         <select id="continent" name="continent" value={filter.continent} onChange={changeHandle}>
@@ -43,25 +44,41 @@ const FilterForm = ({ clickHandle, filter }) => {
         </select>
       </label>
 
-      <label htmlFor="min-Cases">
-        Minimun number of cases:
-        <input type="number" id="min-Cases" name="min-Cases" value={filter.minCases} onChange={changeHandle} />
-      </label>
+      <div className={styles.limits}>
 
-      <label htmlFor="max-Cases">
-        Maximun number of cases:
-        <input type="number" id="max-Cases" name="max-Cases" value={filter.maxCases} onChange={changeHandle} />
-      </label>
+        <div className={styles.infoType}>
+          <label htmlFor="min-Cases">
+            <span className={styles.input_label}>
+              Minimun number of cases:
+            </span>
+            <input type="number" id="min-Cases" name="min-Cases" value={filter.minCases} onChange={changeHandle} />
+          </label>
 
-      <label htmlFor="min-Deaths">
-        Minimun number of deaths:
-        <input type="number" id="min-Deaths" name="min-Deaths" value={filter.minDeaths} onChange={changeHandle} />
-      </label>
+          <label htmlFor="max-Cases">
+            <span className={styles.input_label}>
+              Maximun number of cases:
+            </span>
+            <input type="number" id="max-Cases" name="max-Cases" value={filter.maxCases} onChange={changeHandle} />
+          </label>
+        </div>
 
-      <label htmlFor="max-Deaths">
-        Maximun number of deaths:
-        <input type="number" id="max-Deaths" name="max-Deaths" value={filter.maxDeaths} onChange={changeHandle} />
-      </label>
+        <div className={styles.infoType}>
+
+          <label htmlFor="min-Deaths">
+            <span className={styles.input_label}>
+              Minimun number of deaths:
+            </span>
+            <input type="number" id="min-Deaths" name="min-Deaths" value={filter.minDeaths} onChange={changeHandle} />
+          </label>
+
+          <label htmlFor="max-Deaths">
+            <span className={styles.input_label}>
+              Maximun number of deaths:
+            </span>
+            <input type="number" id="max-Deaths" name="max-Deaths" value={filter.maxDeaths} onChange={changeHandle} />
+          </label>
+        </div>
+      </div>
 
     </form>
   );
