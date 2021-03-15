@@ -1,0 +1,5 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(86, 196, 86);
+}

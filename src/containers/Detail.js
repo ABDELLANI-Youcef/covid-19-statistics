@@ -47,6 +47,7 @@ const Detail = ({
       <p>Please wait</p>
     );
   }
+
   const countryData = data[country].All;
   let deathsHistory = null;
   let confirmedHistory = null;

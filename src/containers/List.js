@@ -6,6 +6,7 @@ import FilterForm from '../components/FilterForm';
 import GlobalInformations from '../components/GlobalInformations';
 import { createFilter, createCase } from '../actions/index';
 import { gatherCasesInformations } from '../reducers/cases';
+import styles from '../styles/List.module.css';
 
 const List = ({
   filter, cases, createFilter, createCase,
@@ -33,7 +34,7 @@ const List = ({
     .map(e => e[0]);
 
   if (countries.length > 0) {
-    countries = countries.map(place => <CountryItem key={place} country={place} />);
+    countries = countries.filter(e => e !== 'Global').map(place => <CountryItem key={place} country={cases[place].All} name={place} />);
   } else {
     countries = null;
   }
@@ -42,10 +43,9 @@ const List = ({
     <>
       <FilterForm filter={filter} clickHandle={clickHandle} />
       {world}
-      <p>
-        {filter.continent}
-      </p>
-      {countries}
+      <div className={styles.list}>
+        {countries}
+      </div>
     </>
   );
 };
