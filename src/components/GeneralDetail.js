@@ -1,37 +1,50 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import styles from '../styles/GeneralDetail.module.css';
 
 const GeneralDetail = ({ country }) => (
-  <div>
-    <ul>
-      <li>
-        The capital:
-        {' '}
+  <div className={styles.container}>
+    <div className={styles.information}>
+      The capital:
+      {' '}
+      <span className={styles.number}>
         {country.capital_city}
-      </li>
-      <li>
-        Population:
-        {' '}
+      </span>
+    </div>
+
+    <div className={styles.information}>
+      Population:
+      {' '}
+      <span className={styles.number}>
         {country.population}
-      </li>
-      <li>
-        confirmed:
-        {' '}
+      </span>
+    </div>
+
+    <div className={styles.information}>
+      confirmed:
+      {' '}
+      <span className={`${styles.number} ${styles.danger}`}>
         {country.confirmed}
-        {' '}
-        confirmed case
-      </li>
-      <li>
+      </span>
+      {' '}
+      confirmed case
+    </div>
+
+    <div className={styles.information}>
+      <span className={`${styles.number} ${styles.danger}`}>
         {country.deaths}
-        {' '}
-        deaths
-      </li>
-      <li>
+      </span>
+      {' '}
+      deaths
+    </div>
+
+    <div className={styles.information}>
+      <span className={`${styles.number} ${styles.safe}`}>
         {country.recovered}
-        {' '}
-        recovered persons
-      </li>
-    </ul>
+      </span>
+      {' '}
+      recovered persons
+    </div>
   </div>
 );
 
