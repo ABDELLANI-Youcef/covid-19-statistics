@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const GeneralDetail = ({ country }) => (
-  <>
+  <div>
     <ul>
       <li>
         The capital:
@@ -32,7 +32,7 @@ const GeneralDetail = ({ country }) => (
         recovered persons
       </li>
     </ul>
-  </>
+  </div>
 );
 
 GeneralDetail.propTypes = {

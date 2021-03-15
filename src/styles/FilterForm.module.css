@@ -1,24 +1,16 @@
 .filterForm {
   background-color: #5cbd02;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
-}
-
-.limits {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
 }
 
 .infoType {
   display: flex;
   flex-direction: column;
-  width: 50%;
 }
 
 .input_label {
-  width: 35%;
+  display: block;
 }

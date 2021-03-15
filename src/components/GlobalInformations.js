@@ -1,30 +1,38 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import styles from '../styles/GlobalInformations.module.css';
 
 const GlobalInformations = ({ world }) => (
   <>
-    <div>
-      <ul>
-        <li>
-          Population in the world:
+    <div className={styles.container}>
+      <div>
+        Population in the world:
+        {' '}
+        <span className={styles.number}>
           {world.population}
-        </li>
-        <li>
-          Confirmed cases in the world:
-          {' '}
+        </span>
+      </div>
+      <div>
+        Confirmed cases in the world:
+        {' '}
+        <span className={styles.number}>
           {world.confirmed}
-        </li>
-        <li>
-          Deaths in the world:
-          {' '}
+        </span>
+      </div>
+      <div>
+        Deaths in the world:
+        {' '}
+        <span className={styles.number}>
           {world.deaths}
-        </li>
-        <li>
-          Total of recovered Persons in the world:
-          {' '}
+        </span>
+      </div>
+      <div>
+        Total of recovered Persons in the world:
+        {' '}
+        <span className={styles.number}>
           {world.recovered}
-        </li>
-      </ul>
+        </span>
+      </div>
     </div>
   </>
 );

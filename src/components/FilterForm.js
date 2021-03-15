@@ -44,40 +44,37 @@ const FilterForm = ({ clickHandle, filter }) => {
         </select>
       </label>
 
-      <div className={styles.limits}>
+      <div className={styles.infoType}>
+        <label htmlFor="min-Cases">
+          <span className={styles.input_label}>
+            Minimun number of cases:
+          </span>
+          <input type="number" id="min-Cases" name="min-Cases" value={filter.minCases} onChange={changeHandle} />
+        </label>
 
-        <div className={styles.infoType}>
-          <label htmlFor="min-Cases">
-            <span className={styles.input_label}>
-              Minimun number of cases:
-            </span>
-            <input type="number" id="min-Cases" name="min-Cases" value={filter.minCases} onChange={changeHandle} />
-          </label>
+        <label htmlFor="max-Cases">
+          <span className={styles.input_label}>
+            Maximun number of cases:
+          </span>
+          <input type="number" id="max-Cases" name="max-Cases" value={filter.maxCases} onChange={changeHandle} />
+        </label>
+      </div>
 
-          <label htmlFor="max-Cases">
-            <span className={styles.input_label}>
-              Maximun number of cases:
-            </span>
-            <input type="number" id="max-Cases" name="max-Cases" value={filter.maxCases} onChange={changeHandle} />
-          </label>
-        </div>
+      <div className={styles.infoType}>
 
-        <div className={styles.infoType}>
+        <label htmlFor="min-Deaths">
+          <span className={styles.input_label}>
+            Minimun number of deaths:
+          </span>
+          <input type="number" id="min-Deaths" name="min-Deaths" value={filter.minDeaths} onChange={changeHandle} />
+        </label>
 
-          <label htmlFor="min-Deaths">
-            <span className={styles.input_label}>
-              Minimun number of deaths:
-            </span>
-            <input type="number" id="min-Deaths" name="min-Deaths" value={filter.minDeaths} onChange={changeHandle} />
-          </label>
-
-          <label htmlFor="max-Deaths">
-            <span className={styles.input_label}>
-              Maximun number of deaths:
-            </span>
-            <input type="number" id="max-Deaths" name="max-Deaths" value={filter.maxDeaths} onChange={changeHandle} />
-          </label>
-        </div>
+        <label htmlFor="max-Deaths">
+          <span className={styles.input_label}>
+            Maximun number of deaths:
+          </span>
+          <input type="number" id="max-Deaths" name="max-Deaths" value={filter.maxDeaths} onChange={changeHandle} />
+        </label>
       </div>
 
     </form>
