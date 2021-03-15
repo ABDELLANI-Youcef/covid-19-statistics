@@ -142,7 +142,6 @@ it('should return DeathsHistory correctly', () => {
   expect(deathsHistory).toMatchSnapshot();
 });
 
-//
 it('should return ConfirmedHistory correctly', () => {
   const country = {
     dates: {
