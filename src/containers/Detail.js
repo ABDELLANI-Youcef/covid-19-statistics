@@ -6,6 +6,7 @@ import GeneralDetail from '../components/GeneralDetail';
 import DeathsHistory from '../components/DeathsHistory';
 import ConfirmedHistory from '../components/ConfirmedHistory';
 import { gatherCasesInformations } from '../reducers/cases';
+import styles from '../styles/Detail.module.css';
 
 const requestHistory = async (nameCountry, createHistoryConfirmed,
   createHistoryDeaths) => {
@@ -55,23 +56,21 @@ const Detail = ({
     deathsHistory = null;
   } else {
     deathsHistory = (
-      <div>
-        <DeathsHistory country={deaths.All} />
-      </div>
+      <DeathsHistory country={deaths.All} />
     );
     confirmedHistory = (
-      <div>
-        <ConfirmedHistory country={confirmed.All} />
-      </div>
+      <ConfirmedHistory country={confirmed.All} />
     );
   }
 
   return (
-    <>
+    <div className={styles.bigContainer}>
       <GeneralDetail country={countryData} />
-      {deathsHistory}
-      {confirmedHistory}
-    </>
+      <div className={styles.container}>
+        {deathsHistory}
+        {confirmedHistory}
+      </div>
+    </div>
   );
 };
 

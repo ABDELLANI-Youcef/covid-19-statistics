@@ -1,0 +1,8 @@
+.bigContainer {
+  background-color: rgb(86, 196, 86);
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
