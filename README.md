@@ -33,7 +33,7 @@ To build this application we used:
 
 ## Live-Demo
 
-[The live demo link](https://youcef-react-calculator.herokuapp.com/)
+[The live demo link](https://youcef-abdellani-covid-19-numbers.netlify.app/)
 
 ## Features
 
