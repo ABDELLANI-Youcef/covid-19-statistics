@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+# COVID-19 statistics
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## The table of contents
 
-## Available Scripts
+- About
+- Live-demo
+- Features
+- How to use the application
+- Getting started (Development)
+- Launch the application
+- Author
+- Show your support
+- Acknowledgments
+- Issues
+- 📝 License
 
-In the project directory, you can run:
+## About
 
-### `yarn start`
+In this application, we show the statistics of COVID-19 Globally in the world and also in every country. The informations shown here are gathered  from [ M-Media-Group /Covid-19-API ](https://github.com/M-Media-Group/Covid-19-API) API. We show here the number of cases, deaths, and recovery from COVID-19.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To build this application we used:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Javascript ES6;
+- Html/CSS;
+- React;
+- Redux;
+- React-Redux;
+- Jest;
+- Create React App;
+- React Hooks;
+- React Router
+- Linters ( eslint and stylelint)
 
-### `yarn test`
+## Live-Demo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[The live demo link](https://youcef-react-calculator.herokuapp.com/)
 
-### `yarn build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- The number of cases of COVID-19 in every country;
+- The number of deaths due to COVID-19 in every country;
+- The number of recoveries from COVID-19 in every country;
+- The number of cases of COVID-19 globally in the world;
+- The number of deaths due to COVID-19 globally in the world;
+- The number of recoveries from COVID-19 globally in the world;
+- Filter the results according to :
+  - the continent;
+  - the minimum number of cases;
+  - the maximum number of cases;
+  - the minimum number of deaths;
+  - the maximum number of deaths.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## How to use the application
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+In this Application, on the home page, the user gets the informations about the COVID-19 statistics (cases, deaths, and recoveries). The user can use the filter form to change the results to be shown. If the user wants to get more details about a specific country, he can click on the name of that country in order to access a page of details. There he finds the information about the country:
+- the capital of the country;
+- the population in the country;
+- the number of confirmed cases;
+- the number of deaths due to COVID-19;
+- the number of recoveries from COVID-19;
+- the increase in the number of cases in the last 30 days;
+- the increase in the number of deaths in the last 30 days.
 
-### `yarn eject`
+## Getting started (Development)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To get a local copy of the repository please run the following commands on your terminal:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+$ git clone git@github.com:ABDELLANI-Youcef/covid-19-statistics.git
+$ cd covid-19-statistics
+$ git checkout development
+$ git branch feature-branch
+$ git checkout feature-branch
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Launch the application
 
-## Learn More
+After making the local copy of the repository:
+- get inside the repository folder;
+- setup the dependencies of the project: in the terminal run: ```yarn install```
+- enter the command: ```yarn start```.
+- then you get the application in the localhost in your web browser.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Author
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Youcef Abdellani**
 
-### Code Splitting
+- Github: [@ABDELLANI-Youcef](https://github.com/ABDELLANI-Youcef)
+- LinkedIn:[LinkedIn](linkedin.com/in/youcef-abdellani)
+- Twitter:[@YoucefAbdellani](https://twitter.com/YoucefAbdellani)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🤝 Contributing
 
-### Analyzing the Bundle Size
+Contributions, issues ,and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Show your support
 
-### Making a Progressive Web App
+Give an ⭐️ if you like this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Acknowledgments
 
-### Advanced Configuration
+- Hat tip to [stackoverflow](https://stackoverflow.com) community.
+- Hat tip to [Microverse](https://www.microverse.org/) TSE for Code Review
+- Hat tip to [Create React App](https://github.com/facebook/create-react-app)
+- Hat tip to [ M-Media-Group /Covid-19-API ](https://github.com/M-Media-Group/Covid-19-API)
+- Hat tip to [Nelson Sakwa](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs))
+- Hat tip to anyone whose code was used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Issues
+If you would like to report an issue [the link](https://github.com/ABDELLANI-Youcef/covid-19-statistics/issues)
 
-### Deployment
+## 📝 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+All source code is available jointly under the MIT License.
+See [MIT licence]() for details.
