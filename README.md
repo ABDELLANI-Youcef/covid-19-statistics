@@ -4,6 +4,7 @@
 
 - About
 - Live-demo
+- Application pictures
 - Features
 - How to use the application
 - Getting started (Development)
@@ -34,6 +35,15 @@ To build this application we used:
 ## Live-Demo
 
 [The live demo link](https://youcef-abdellani-covid-19-numbers.netlify.app/)
+
+## Application pictures
+
+This is the homepage of the application
+![homepage picture](./homepage.png)
+
+This is the country details page of the application
+![details picture](./detailsPage.png)
+
 
 ## Features
 
