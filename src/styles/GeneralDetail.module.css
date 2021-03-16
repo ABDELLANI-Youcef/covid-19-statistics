@@ -1,0 +1,23 @@
+.container {
+  background-color: #5cbd02;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.information {
+  font-size: 20px;
+}
+
+.number {
+  font-weight: bold;
+}
+
+.number.danger {
+  color: red;
+}
+
+.number.safe {
+  color: blue;
+}

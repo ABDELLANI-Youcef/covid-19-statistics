@@ -1,0 +1,16 @@
+.filterForm {
+  background-color: #5cbd02;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.infoType {
+  display: flex;
+  flex-direction: column;
+}
+
+.input_label {
+  display: block;
+}
