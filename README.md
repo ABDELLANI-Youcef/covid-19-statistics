@@ -79,7 +79,7 @@ $ git checkout feature-branch
 After making the local copy of the repository:
 - get inside the repository folder;
 - setup the dependencies of the project: in the terminal run: ```yarn install```
-- enter the command: ```yarn start```.
+- enter the command: ```yarn start``` to start the server in localhost.
 - then you get the application in the localhost in your web browser.
 
 ## Author
