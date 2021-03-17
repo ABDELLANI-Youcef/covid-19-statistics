@@ -9,7 +9,7 @@ const Routes = () => (
     <Navbar />
     <Switch>
       <Route exact path="/" component={List} />
-      <Route path="/country" component={Detail} />
+      <Route path="/country/:country" component={Detail} />
     </Switch>
   </BrowserRouter>
 );

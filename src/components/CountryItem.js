@@ -6,7 +6,7 @@ function CountryItem({ country, name }) {
   return (
     <div className={styles.listing}>
       <p>
-        <Link to={{ pathname: '/country', state: { country: name } }}>{ name }</Link>
+        <Link to={{ pathname: `/country/${name}` }}>{ name }</Link>
       </p>
       <p>
         Confirmed cases:

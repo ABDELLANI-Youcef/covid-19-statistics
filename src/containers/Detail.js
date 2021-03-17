@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { createHistoryDeaths, createHistoryConfirmed, createCase } from '../actions/index';
 import GeneralDetail from '../components/GeneralDetail';
 import DeathsHistory from '../components/DeathsHistory';
@@ -30,9 +31,9 @@ const requestHistory = async (nameCountry, createHistoryConfirmed,
   }
 };
 const Detail = ({
-  location, data, createHistoryConfirmed, createHistoryDeaths, deaths, confirmed, createCase,
+  data, createHistoryConfirmed, createHistoryDeaths, deaths, confirmed, createCase,
 }) => {
-  const { country } = location.state;
+  const { country } = useParams();
 
   useEffect(() => {
     if (Object.keys(deaths).length === 0 || deaths.All.country !== country) {
@@ -75,7 +76,6 @@ const Detail = ({
 };
 
 Detail.propTypes = {
-  location: PropTypes.objectOf(PropTypes.any).isRequired,
   data: PropTypes.objectOf(PropTypes.any).isRequired,
   createHistoryConfirmed: PropTypes.func.isRequired,
   createHistoryDeaths: PropTypes.func.isRequired,
