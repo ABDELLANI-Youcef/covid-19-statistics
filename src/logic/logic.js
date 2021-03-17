@@ -1,4 +1,4 @@
-const eventSource = (e, filter) => {
+export const eventSource = (e, filter) => {
   let {
     continent, maxCases, minCases, maxDeaths, minDeaths,
   } = filter;
@@ -30,4 +30,8 @@ const eventSource = (e, filter) => {
   };
 };
 
-export default eventSource;
+export const filterResults = (c, filter) => (c.continent === filter.continent || filter.continent === 'All')
+            && (filter.maxCases < 0 || c.confirmed <= filter.maxCases)
+            && (filter.minCases === 0 || c.confirmed >= filter.minCases)
+            && (filter.maxDeaths < 0 || c.deaths <= filter.maxDeaths)
+            && (filter.minDeaths === 0 || c.deaths >= filter.minDeaths);

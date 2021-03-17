@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import styles from '../styles/FilterForm.module.css';
-import eventSource from '../logic/logic';
+import { eventSource } from '../logic/logic';
 
 const continents = ['All', 'Africa', 'Asia', 'North America', 'South America', 'Oceania', 'Europe'];
 const FilterForm = ({ clickHandle, filter }) => {

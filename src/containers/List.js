@@ -7,6 +7,7 @@ import GlobalInformations from '../components/GlobalInformations';
 import { createFilter, createCase } from '../actions/index';
 import { gatherCasesInformations } from '../reducers/cases';
 import styles from '../styles/List.module.css';
+import { filterResults } from '../logic/logic';
 
 const List = ({
   filter, cases, createFilter, createCase,
@@ -25,11 +26,7 @@ const List = ({
 
   countries = Object.entries(cases).filter(row => {
     const c = row[1].All;
-    return (c.continent === filter.continent || filter.continent === 'All')
-            && (filter.maxCases < 0 || c.confirmed <= filter.maxCases)
-            && (filter.minCases === 0 || c.confirmed >= filter.minCases)
-            && (filter.maxDeaths < 0 || c.deaths <= filter.maxDeaths)
-            && (filter.minDeaths === 0 || c.deaths >= filter.minDeaths);
+    return filterResults(c, filter);
   })
     .map(e => e[0]);
 
