@@ -22,22 +22,45 @@ const List = ({
     }
   }, []);
 
-  const clickHandle = newFilter => { createFilter(newFilter); };
-
-  countries = Object.entries(cases).filter(row => filterResults(row[1].All, filter)).map(e => e[0]);
-
   const [page, setPage] = useState(0);
   const handlePageClick = data => {
     const { selected } = data;
     setPage(selected);
   };
 
+  const clickHandle = newFilter => {
+    setPage(0);
+    createFilter(newFilter);
+  };
+
+  countries = Object.entries(cases).filter(row => filterResults(row[1].All, filter)).map(e => e[0]);
+
+  let pagination = null;
+
   if (countries.length > 0) {
+    const count = Math.floor(countries.filter(e => e !== 'Global').length / 20) + 1;
     countries = countries.filter(e => e !== 'Global').slice(20 * page, 20 * page + 20).map(place => <CountryItem key={place} country={cases[place].All} name={place} />);
     countries = (
       <div className={styles.list}>
         {countries}
       </div>
+    );
+    pagination = (
+      <ReactPaginate
+        previousLabel="previous"
+        nextLabel="next"
+        breakLabel="..."
+        breakClassName="break-me"
+        pageCount={count}
+        initialPage={0}
+        marginPagesDisplayed={2}
+        pageRangeDisplayed={5}
+        onPageChange={handlePageClick}
+        containerClassName={styles.pagination}
+        subContainerClassName="pages pagination"
+        activeClassName={styles.active}
+        pageClassName={styles.page}
+      />
     );
   } else {
     countries = (
@@ -54,21 +77,7 @@ const List = ({
       <FilterForm filter={filter} clickHandle={clickHandle} />
       {world}
       {countries}
-      <ReactPaginate
-        previousLabel="previous"
-        nextLabel="next"
-        breakLabel="..."
-        breakClassName="break-me"
-        pageCount={10}
-        initialPage={0}
-        marginPagesDisplayed={2}
-        pageRangeDisplayed={5}
-        onPageChange={handlePageClick}
-        containerClassName={styles.pagination}
-        subContainerClassName="pages pagination"
-        activeClassName={styles.active}
-        pageClassName={styles.page}
-      />
+      {pagination}
     </>
   );
 };

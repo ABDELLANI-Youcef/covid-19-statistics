@@ -861,7 +861,7 @@ exports[`should return GlobalInformations correctly 1`] = `
     </span>
   </div>
   <div>
-    Total of recovered Persons in the world:
+    Total of recoveries in the world:
      
     <span
       className="number"
