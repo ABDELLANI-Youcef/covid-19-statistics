@@ -13,3 +13,9 @@
   text-decoration: none;
   color: white;
 }
+
+@media only screen and (max-width: 960px) {
+  .navbar {
+    flex-direction: column;
+  }
+}

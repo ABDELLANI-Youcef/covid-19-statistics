@@ -2,12 +2,14 @@
   background-color: #5cbd02;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   align-items: center;
   padding: 10px;
 }
 
 .information {
   font-size: 20px;
+  margin: 10px 30px;
 }
 
 .number {
