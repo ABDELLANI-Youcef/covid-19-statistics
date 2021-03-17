@@ -13,6 +13,7 @@ const FilterForm = ({ clickHandle, filter }) => {
     <form className={styles.filterForm}>
       <label htmlFor="continent">
         Continent:
+        {' '}
         <select id="continent" name="continent" value={filter.continent} onChange={changeHandle}>
           {continents.map(con => (
             <option value={con} key={con}>{con}</option>
