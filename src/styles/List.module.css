@@ -1,6 +1,9 @@
 .list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  margin: 20px;
+  grid-template-columns: repeat(auto-fit ,minmax(300px, 1fr));
+  column-gap: 10px;
+  row-gap: 50px;
   background-color: rgb(86, 196, 86);
 }
 
