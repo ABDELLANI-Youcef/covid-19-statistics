@@ -15,11 +15,11 @@ const Detail = ({
   const { country } = useParams();
 
   useEffect(() => {
+    if (Object.keys(data).length === 0) {
+      gatherCasesInformations(createCase);
+    }
     if (Object.keys(deaths).length === 0 || deaths.All.country !== country) {
       requestHistory(country, createHistoryConfirmed, createHistoryDeaths);
-      if (Object.keys(data).length === 0) {
-        gatherCasesInformations(createCase);
-      }
     }
   }, []);
 

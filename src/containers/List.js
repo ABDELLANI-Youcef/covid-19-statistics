@@ -27,8 +27,7 @@ const List = ({
   countries = Object.entries(cases).filter(row => {
     const c = row[1].All;
     return filterResults(c, filter);
-  })
-    .map(e => e[0]);
+  }).map(e => e[0]);
 
   if (countries.length > 0) {
     countries = countries.filter(e => e !== 'Global').map(place => <CountryItem key={place} country={cases[place].All} name={place} />);
