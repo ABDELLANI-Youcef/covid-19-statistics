@@ -9,3 +9,20 @@
   justify-content: center;
   margin-top: 50px;
 }
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page {
+  margin: 10px;
+  cursor: pointer;
+}
+
+.active {
+  font-weight: bold;
+  color: #182ddc;
+  font-size: 27px;
+}

@@ -22,22 +22,18 @@ const List = ({
     }
   }, []);
 
-  const clickHandle = newFilter => {
-    createFilter(newFilter);
-  };
+  const clickHandle = newFilter => { createFilter(newFilter); };
 
-  countries = Object.entries(cases).filter(row => {
-    const c = row[1].All;
-    return filterResults(c, filter);
-  }).map(e => e[0]);
+  countries = Object.entries(cases).filter(row => filterResults(row[1].All, filter)).map(e => e[0]);
 
   const [page, setPage] = useState(0);
   const handlePageClick = data => {
     const { selected } = data;
     setPage(selected);
   };
+
   if (countries.length > 0) {
-    countries = countries.filter(e => e !== 'Global').slice(10 * page, 10 * page + 20).map(place => <CountryItem key={place} country={cases[place].All} name={place} />);
+    countries = countries.filter(e => e !== 'Global').slice(20 * page, 20 * page + 20).map(place => <CountryItem key={place} country={cases[place].All} name={place} />);
     countries = (
       <div className={styles.list}>
         {countries}
@@ -55,24 +51,24 @@ const List = ({
 
   return (
     <>
-      {page}
       <FilterForm filter={filter} clickHandle={clickHandle} />
+      {world}
+      {countries}
       <ReactPaginate
         previousLabel="previous"
         nextLabel="next"
         breakLabel="..."
         breakClassName="break-me"
-        pageCount={20}
+        pageCount={10}
         initialPage={0}
         marginPagesDisplayed={2}
         pageRangeDisplayed={5}
         onPageChange={handlePageClick}
-        containerClassName="pagination"
+        containerClassName={styles.pagination}
         subContainerClassName="pages pagination"
-        activeClassName="active"
+        activeClassName={styles.active}
+        pageClassName={styles.page}
       />
-      {world}
-      {countries}
     </>
   );
 };
