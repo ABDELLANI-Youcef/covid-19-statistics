@@ -878,7 +878,7 @@ exports[`should return the CountryItem correctly 1`] = `
 >
   <p>
     <a
-      href="/country"
+      href="/country/Algeria"
       onClick={[Function]}
     >
       Algeria

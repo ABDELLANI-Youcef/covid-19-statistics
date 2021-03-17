@@ -1,37 +1,13 @@
 import PropTypes from 'prop-types';
 import styles from '../styles/FilterForm.module.css';
+import eventSource from '../logic/logic';
 
 const continents = ['All', 'Africa', 'Asia', 'North America', 'South America', 'Oceania', 'Europe'];
 const FilterForm = ({ clickHandle, filter }) => {
   const changeHandle = e => {
-    let {
-      continent, maxCases, minCases, maxDeaths, minDeaths,
-    } = filter;
-    const { value } = e.target;
-    switch (e.target.id) {
-      case 'min-Cases':
-        minCases = parseInt(value, 10);
-        break;
-
-      case 'max-Cases':
-        maxCases = parseInt(value, 10);
-        break;
-
-      case 'min-Deaths':
-        minDeaths = parseInt(value, 10);
-        break;
-
-      case 'max-Deaths':
-        maxDeaths = parseInt(value, 10);
-        break;
-
-      default:
-        continent = value;
-        break;
-    }
-    clickHandle({
-      continent, maxCases, minCases, maxDeaths, minDeaths,
-    });
+    clickHandle(
+      eventSource(e, filter),
+    );
   };
   return (
     <form className={styles.filterForm}>

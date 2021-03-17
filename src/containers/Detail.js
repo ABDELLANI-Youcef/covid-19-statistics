@@ -6,30 +6,9 @@ import { createHistoryDeaths, createHistoryConfirmed, createCase } from '../acti
 import GeneralDetail from '../components/GeneralDetail';
 import DeathsHistory from '../components/DeathsHistory';
 import ConfirmedHistory from '../components/ConfirmedHistory';
-import { gatherCasesInformations } from '../reducers/cases';
+import { gatherCasesInformations, requestHistory } from '../reducers/cases';
 import styles from '../styles/Detail.module.css';
 
-const requestHistory = async (nameCountry, createHistoryConfirmed,
-  createHistoryDeaths) => {
-  try {
-    const options = {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-    };
-    const deathsResponse = await fetch(`https://covid-api.mmediagroup.fr/v1/history?country=${nameCountry}&status=deaths`, options);
-    const deaths = await deathsResponse.json();
-    const confirmedResponse = await fetch(`https://covid-api.mmediagroup.fr/v1/history?country=${nameCountry}&status=confirmed`, options);
-    const confirmed = await confirmedResponse.json();
-    createHistoryConfirmed(confirmed);
-    createHistoryDeaths(deaths);
-  } catch (error) {
-    createHistoryConfirmed(error);
-    createHistoryDeaths(error);
-  }
-};
 const Detail = ({
   data, createHistoryConfirmed, createHistoryDeaths, deaths, confirmed, createCase,
 }) => {

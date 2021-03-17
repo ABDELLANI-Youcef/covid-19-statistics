@@ -21,6 +21,28 @@ export const gatherCasesInformations = async actionCreator => {
   }
 };
 
+export const requestHistory = async (nameCountry, createHistoryConfirmed,
+  createHistoryDeaths) => {
+  try {
+    const options = {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    };
+    const deathsResponse = await fetch(`https://covid-api.mmediagroup.fr/v1/history?country=${nameCountry}&status=deaths`, options);
+    const deaths = await deathsResponse.json();
+    const confirmedResponse = await fetch(`https://covid-api.mmediagroup.fr/v1/history?country=${nameCountry}&status=confirmed`, options);
+    const confirmed = await confirmedResponse.json();
+    createHistoryConfirmed(confirmed);
+    createHistoryDeaths(deaths);
+  } catch (error) {
+    createHistoryConfirmed(error);
+    createHistoryDeaths(error);
+  }
+};
+
 export const casesReducer = (state = defaultCases, action) => {
   switch (action.type) {
     case CREATE_CASE:
