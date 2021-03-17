@@ -9,6 +9,7 @@
 - How to use the application
 - Getting started (Development)
 - Launch the application
+- Test the application
 - Author
 - Show your support
 - Acknowledgments
@@ -91,6 +92,16 @@ After making the local copy of the repository:
 - setup the dependencies of the project: in the terminal run: ```yarn install```
 - enter the command: ```yarn start``` to start the server in localhost.
 - then you get the application in the localhost in your web browser.
+
+## Test the application
+
+After making the local copy of the repository:
+- get inside the repository folder;
+- setup the dependencies of the project: in the terminal run: ```yarn install```
+- enter the command: ```yarn test``` to test the application.
+- then you get the application tested.
+
+In this application I test the components using the snapshots and I test the logical functions using jest.
 
 ## Author
 
