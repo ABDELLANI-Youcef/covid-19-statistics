@@ -3,3 +3,9 @@
   flex-wrap: wrap;
   background-color: rgb(86, 196, 86);
 }
+
+.loading {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}

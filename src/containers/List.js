@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
+import Loader from 'react-loader-spinner';
 import CountryItem from '../components/CountryItem';
 import FilterForm from '../components/FilterForm';
 import GlobalInformations from '../components/GlobalInformations';
@@ -15,7 +16,7 @@ const List = ({
   let countries = Object.keys(cases);
 
   useEffect(() => {
-    if (countries === null) {
+    if (Object.keys(cases).length === 0) {
       gatherCasesInformations(createCase);
     }
   }, []);
@@ -31,17 +32,25 @@ const List = ({
 
   if (countries.length > 0) {
     countries = countries.filter(e => e !== 'Global').map(place => <CountryItem key={place} country={cases[place].All} name={place} />);
+    countries = (
+      <div className={styles.list}>
+        {countries}
+      </div>
+    );
   } else {
-    countries = null;
+    countries = (
+      <div className={styles.loading}>
+        <Loader type="Oval" color="#000000" height={100} width={100} timeout={0} />
+      </div>
+    );
   }
-  const world = countries !== null ? <GlobalInformations world={cases.Global.All} /> : null;
+  const world = Object.keys(cases).length > 0 ? <GlobalInformations world={cases.Global.All} />
+    : null;
   return (
     <>
       <FilterForm filter={filter} clickHandle={clickHandle} />
       {world}
-      <div className={styles.list}>
-        {countries}
-      </div>
+      {countries}
     </>
   );
 };

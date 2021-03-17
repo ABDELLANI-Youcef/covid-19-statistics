@@ -5,4 +5,11 @@
 .container {
   display: flex;
   width: 100%;
+  justify-content: center;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }

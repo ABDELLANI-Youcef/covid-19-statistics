@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import Loader from 'react-loader-spinner';
 import { createHistoryDeaths, createHistoryConfirmed, createCase } from '../actions/index';
 import GeneralDetail from '../components/GeneralDetail';
 import DeathsHistory from '../components/DeathsHistory';
@@ -32,8 +33,13 @@ const Detail = ({
   const countryData = data[country].All;
   let deathsHistory = null;
   let confirmedHistory = null;
+  let loading = null;
   if (Object.keys(deaths).length === 0 || deaths.All.country !== country) {
-    deathsHistory = null;
+    loading = (
+      <div className={styles.loading}>
+        <Loader type="Oval" color="#000000" height={100} width={100} timeout={0} />
+      </div>
+    );
   } else {
     deathsHistory = (
       <DeathsHistory country={deaths.All} />
@@ -47,6 +53,7 @@ const Detail = ({
     <div className={styles.bigContainer}>
       <GeneralDetail country={countryData} />
       <div className={styles.container}>
+        {loading}
         {deathsHistory}
         {confirmedHistory}
       </div>
