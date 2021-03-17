@@ -123,4 +123,4 @@ If you would like to report an issue [the link](https://github.com/ABDELLANI-You
 ## 📝 License
 
 All source code is available jointly under the MIT License.
-See [MIT licence]() for details.
+See [MIT licence](./LICENSE.md) for details.
