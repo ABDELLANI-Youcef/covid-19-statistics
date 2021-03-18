@@ -1,0 +1,16 @@
+.bigContainer {
+  background-color: rgb(86, 196, 86);
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  justify-content: center;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}

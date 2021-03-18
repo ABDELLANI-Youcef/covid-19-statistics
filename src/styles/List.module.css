@@ -1,0 +1,31 @@
+.list {
+  display: grid;
+  margin: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: 10px;
+  row-gap: 50px;
+  background-color: rgb(86, 196, 86);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page {
+  margin: 10px;
+  cursor: pointer;
+}
+
+.active {
+  font-weight: bold;
+  color: #182ddc;
+  font-size: 27px;
+}

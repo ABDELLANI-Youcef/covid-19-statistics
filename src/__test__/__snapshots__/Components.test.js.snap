@@ -1,0 +1,980 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the Filter Form correctly 1`] = `
+<form
+  className="filterForm"
+>
+  <label
+    htmlFor="continent"
+  >
+    Continent:
+     
+    <select
+      id="continent"
+      name="continent"
+      onChange={[Function]}
+      value="All"
+    >
+      <option
+        value="All"
+      >
+        All
+      </option>
+      <option
+        value="Africa"
+      >
+        Africa
+      </option>
+      <option
+        value="Asia"
+      >
+        Asia
+      </option>
+      <option
+        value="North America"
+      >
+        North America
+      </option>
+      <option
+        value="South America"
+      >
+        South America
+      </option>
+      <option
+        value="Oceania"
+      >
+        Oceania
+      </option>
+      <option
+        value="Europe"
+      >
+        Europe
+      </option>
+    </select>
+  </label>
+  <div
+    className="infoType"
+  >
+    <label
+      htmlFor="min-Cases"
+    >
+      <span
+        className="input_label"
+      >
+        Minimun number of cases:
+      </span>
+      <input
+        id="min-Cases"
+        name="min-Cases"
+        onChange={[Function]}
+        type="number"
+        value={0}
+      />
+    </label>
+    <label
+      htmlFor="max-Cases"
+    >
+      <span
+        className="input_label"
+      >
+        Maximun number of cases:
+      </span>
+      <input
+        id="max-Cases"
+        name="max-Cases"
+        onChange={[Function]}
+        type="number"
+        value={-1}
+      />
+    </label>
+  </div>
+  <div
+    className="infoType"
+  >
+    <label
+      htmlFor="min-Deaths"
+    >
+      <span
+        className="input_label"
+      >
+        Minimun number of deaths:
+      </span>
+      <input
+        id="min-Deaths"
+        name="min-Deaths"
+        onChange={[Function]}
+        type="number"
+        value={0}
+      />
+    </label>
+    <label
+      htmlFor="max-Deaths"
+    >
+      <span
+        className="input_label"
+      >
+        Maximun number of deaths:
+      </span>
+      <input
+        id="max-Deaths"
+        name="max-Deaths"
+        onChange={[Function]}
+        type="number"
+        value={-1}
+      />
+    </label>
+  </div>
+</form>
+`;
+
+exports[`should render the Navbar correctly 1`] = `
+<div
+  className="navbar"
+>
+  <a
+    href="/"
+    onClick={[Function]}
+  >
+    Home
+  </a>
+  <h1>
+    COVID-19 AROUND THE WORLD
+  </h1>
+  <span>
+    Get the last numbers of cases, deaths, and  recovering
+  </span>
+</div>
+`;
+
+exports[`should return ConfirmedHistory correctly 1`] = `
+<div
+  className="history"
+>
+  <h2>
+    Confirmed cases in the last 30 days
+  </h2>
+  <ul>
+    <li>
+      2021-03-14
+      :
+       
+      <span
+        className="number"
+      >
+        115265
+      </span>
+       
+    </li>
+    <li>
+      2021-03-13
+      :
+       
+      <span
+        className="number"
+      >
+        115143
+      </span>
+       
+    </li>
+    <li>
+      2021-03-12
+      :
+       
+      <span
+        className="number"
+      >
+        115008
+      </span>
+       
+    </li>
+    <li>
+      2021-03-11
+      :
+       
+      <span
+        className="number"
+      >
+        114851
+      </span>
+       
+    </li>
+    <li>
+      2021-03-10
+      :
+       
+      <span
+        className="number"
+      >
+        114681
+      </span>
+       
+    </li>
+    <li>
+      2021-03-09
+      :
+       
+      <span
+        className="number"
+      >
+        114543
+      </span>
+       
+    </li>
+    <li>
+      2021-03-08
+      :
+       
+      <span
+        className="number"
+      >
+        114382
+      </span>
+       
+    </li>
+    <li>
+      2021-03-07
+      :
+       
+      <span
+        className="number"
+      >
+        114234
+      </span>
+       
+    </li>
+    <li>
+      2021-03-06
+      :
+       
+      <span
+        className="number"
+      >
+        114104
+      </span>
+       
+    </li>
+    <li>
+      2021-03-05
+      :
+       
+      <span
+        className="number"
+      >
+        113948
+      </span>
+       
+    </li>
+    <li>
+      2021-03-04
+      :
+       
+      <span
+        className="number"
+      >
+        113761
+      </span>
+       
+    </li>
+    <li>
+      2021-03-03
+      :
+       
+      <span
+        className="number"
+      >
+        113593
+      </span>
+       
+    </li>
+    <li>
+      2021-03-02
+      :
+       
+      <span
+        className="number"
+      >
+        113430
+      </span>
+       
+    </li>
+    <li>
+      2021-03-01
+      :
+       
+      <span
+        className="number"
+      >
+        113255
+      </span>
+       
+    </li>
+    <li>
+      2021-02-28
+      :
+       
+      <span
+        className="number"
+      >
+        113092
+      </span>
+       
+    </li>
+    <li>
+      2021-02-27
+      :
+       
+      <span
+        className="number"
+      >
+        112960
+      </span>
+       
+    </li>
+    <li>
+      2021-02-26
+      :
+       
+      <span
+        className="number"
+      >
+        112805
+      </span>
+       
+    </li>
+    <li>
+      2021-02-25
+      :
+       
+      <span
+        className="number"
+      >
+        112622
+      </span>
+       
+    </li>
+    <li>
+      2021-02-24
+      :
+       
+      <span
+        className="number"
+      >
+        112461
+      </span>
+       
+    </li>
+    <li>
+      2021-02-23
+      :
+       
+      <span
+        className="number"
+      >
+        112279
+      </span>
+       
+    </li>
+    <li>
+      2021-02-22
+      :
+       
+      <span
+        className="number"
+      >
+        112094
+      </span>
+       
+    </li>
+    <li>
+      2021-02-21
+      :
+       
+      <span
+        className="number"
+      >
+        111917
+      </span>
+       
+    </li>
+    <li>
+      2021-02-20
+      :
+       
+      <span
+        className="number"
+      >
+        111764
+      </span>
+       
+    </li>
+    <li>
+      2021-02-19
+      :
+       
+      <span
+        className="number"
+      >
+        111600
+      </span>
+       
+    </li>
+    <li>
+      2021-02-18
+      :
+       
+      <span
+        className="number"
+      >
+        111418
+      </span>
+       
+    </li>
+    <li>
+      2021-02-17
+      :
+       
+      <span
+        className="number"
+      >
+        111247
+      </span>
+       
+    </li>
+    <li>
+      2021-02-16
+      :
+       
+      <span
+        className="number"
+      >
+        111069
+      </span>
+       
+    </li>
+    <li>
+      2021-02-15
+      :
+       
+      <span
+        className="number"
+      >
+        110894
+      </span>
+       
+    </li>
+    <li>
+      2021-02-14
+      :
+       
+      <span
+        className="number"
+      >
+        110711
+      </span>
+       
+    </li>
+    <li>
+      2021-02-13
+      :
+       
+      <span
+        className="number"
+      >
+        110513
+      </span>
+       
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`should return DeathsHistory correctly 1`] = `
+<div
+  className="history"
+>
+  <h2>
+    Deaths in the last 30 days
+  </h2>
+  <ul>
+    <li>
+      2021-03-14
+      :
+       
+      <span
+        className="number"
+      >
+        3036
+      </span>
+       
+    </li>
+    <li>
+      2021-03-13
+      :
+       
+      <span
+        className="number"
+      >
+        3034
+      </span>
+       
+    </li>
+    <li>
+      2021-03-12
+      :
+       
+      <span
+        className="number"
+      >
+        3031
+      </span>
+       
+    </li>
+    <li>
+      2021-03-11
+      :
+       
+      <span
+        className="number"
+      >
+        3028
+      </span>
+       
+    </li>
+    <li>
+      2021-03-10
+      :
+       
+      <span
+        className="number"
+      >
+        3026
+      </span>
+       
+    </li>
+    <li>
+      2021-03-09
+      :
+       
+      <span
+        className="number"
+      >
+        3022
+      </span>
+       
+    </li>
+    <li>
+      2021-03-08
+      :
+       
+      <span
+        className="number"
+      >
+        3018
+      </span>
+       
+    </li>
+    <li>
+      2021-03-07
+      :
+       
+      <span
+        className="number"
+      >
+        3013
+      </span>
+       
+    </li>
+    <li>
+      2021-03-06
+      :
+       
+      <span
+        className="number"
+      >
+        3010
+      </span>
+       
+    </li>
+    <li>
+      2021-03-05
+      :
+       
+      <span
+        className="number"
+      >
+        3007
+      </span>
+       
+    </li>
+    <li>
+      2021-03-04
+      :
+       
+      <span
+        className="number"
+      >
+        3002
+      </span>
+       
+    </li>
+    <li>
+      2021-03-03
+      :
+       
+      <span
+        className="number"
+      >
+        2996
+      </span>
+       
+    </li>
+    <li>
+      2021-03-02
+      :
+       
+      <span
+        className="number"
+      >
+        2991
+      </span>
+       
+    </li>
+    <li>
+      2021-03-01
+      :
+       
+      <span
+        className="number"
+      >
+        2987
+      </span>
+       
+    </li>
+    <li>
+      2021-02-28
+      :
+       
+      <span
+        className="number"
+      >
+        2983
+      </span>
+       
+    </li>
+    <li>
+      2021-02-27
+      :
+       
+      <span
+        className="number"
+      >
+        2979
+      </span>
+       
+    </li>
+    <li>
+      2021-02-26
+      :
+       
+      <span
+        className="number"
+      >
+        2977
+      </span>
+       
+    </li>
+    <li>
+      2021-02-25
+      :
+       
+      <span
+        className="number"
+      >
+        2973
+      </span>
+       
+    </li>
+    <li>
+      2021-02-24
+      :
+       
+      <span
+        className="number"
+      >
+        2970
+      </span>
+       
+    </li>
+    <li>
+      2021-02-23
+      :
+       
+      <span
+        className="number"
+      >
+        2967
+      </span>
+       
+    </li>
+    <li>
+      2021-02-22
+      :
+       
+      <span
+        className="number"
+      >
+        2964
+      </span>
+       
+    </li>
+    <li>
+      2021-02-21
+      :
+       
+      <span
+        className="number"
+      >
+        2961
+      </span>
+       
+    </li>
+    <li>
+      2021-02-20
+      :
+       
+      <span
+        className="number"
+      >
+        2958
+      </span>
+       
+    </li>
+    <li>
+      2021-02-19
+      :
+       
+      <span
+        className="number"
+      >
+        2954
+      </span>
+       
+    </li>
+    <li>
+      2021-02-18
+      :
+       
+      <span
+        className="number"
+      >
+        2950
+      </span>
+       
+    </li>
+    <li>
+      2021-02-17
+      :
+       
+      <span
+        className="number"
+      >
+        2947
+      </span>
+       
+    </li>
+    <li>
+      2021-02-16
+      :
+       
+      <span
+        className="number"
+      >
+        2945
+      </span>
+       
+    </li>
+    <li>
+      2021-02-15
+      :
+       
+      <span
+        className="number"
+      >
+        2943
+      </span>
+       
+    </li>
+    <li>
+      2021-02-14
+      :
+       
+      <span
+        className="number"
+      >
+        2939
+      </span>
+       
+    </li>
+    <li>
+      2021-02-13
+      :
+       
+      <span
+        className="number"
+      >
+        2935
+      </span>
+       
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`should return GlobalInformations correctly 1`] = `
+<div
+  className="container"
+>
+  <div>
+    Population in the world:
+     
+    <span
+      className="number"
+    >
+      7444509223
+    </span>
+  </div>
+  <div>
+    Confirmed cases in the world:
+     
+    <span
+      className="number"
+    >
+      120096586
+    </span>
+  </div>
+  <div>
+    Deaths in the world:
+     
+    <span
+      className="number"
+    >
+      2657501
+    </span>
+  </div>
+  <div>
+    Total of recoveries in the world:
+     
+    <span
+      className="number"
+    >
+      68065974
+    </span>
+  </div>
+</div>
+`;
+
+exports[`should return the CountryItem correctly 1`] = `
+<div
+  className="listing"
+>
+  <p>
+    <a
+      href="/country/Algeria"
+      onClick={[Function]}
+    >
+      Algeria
+    </a>
+  </p>
+  <p>
+    Confirmed cases:
+     
+    <span
+      className="number"
+    >
+      115265
+    </span>
+  </p>
+  <p>
+    Deaths:
+     
+    <span
+      className="number"
+    >
+      3036
+    </span>
+  </p>
+  <p>
+    Recovery:
+     
+    <span
+      className="number"
+    >
+      79887
+    </span>
+  </p>
+</div>
+`;
+
+exports[`should return the GlobalDetail correctly 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="information"
+  >
+    The capital:
+     
+    <span
+      className="number"
+    >
+      Alger
+    </span>
+  </div>
+  <div
+    className="information"
+  >
+    Population:
+     
+    <span
+      className="number"
+    >
+      41318142
+    </span>
+  </div>
+  <div
+    className="information"
+  >
+    confirmed:
+     
+    <span
+      className="number danger"
+    >
+      115265
+    </span>
+     
+    confirmed case
+  </div>
+  <div
+    className="information"
+  >
+    <span
+      className="number danger"
+    >
+      3036
+    </span>
+     
+    deaths
+  </div>
+  <div
+    className="information"
+  >
+    <span
+      className="number safe"
+    >
+      79887
+    </span>
+     
+    recovered persons
+  </div>
+</div>
+`;

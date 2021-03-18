@@ -1,0 +1,12 @@
+.history {
+  width: 50%;
+}
+
+.history h2 {
+  margin-bottom: 10px;
+}
+
+.number {
+  font-weight: bold;
+  color: blue;
+}

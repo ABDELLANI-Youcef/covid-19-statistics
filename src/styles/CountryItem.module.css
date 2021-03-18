@@ -1,0 +1,15 @@
+.listing {
+  font-size: 1.5em;
+}
+
+.listing a,
+.listing a:hover {
+  text-decoration: underline;
+  font-weight: bold;
+  color: black;
+}
+
+.number {
+  color: #182ddc;
+  font-weight: bold;
+}
